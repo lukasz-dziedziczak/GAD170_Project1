@@ -12,18 +12,27 @@ public class Enemy : MonoBehaviour
     float maxHP;
     Combat combat;
 
+    private void Awake()
+    {
+        combat = FindObjectOfType<Combat>();
+    }
+
     private void Start()
     {
+        // generate random enemy level
         level = Random.Range(0, 10);
+
+        // set health based on enemy level
         maxHP = baseHP + (additionalHpPerLevel * level);
         currentHP = maxHP;
-        combat = FindObjectOfType<Combat>();
+        
         UI.DisplayText("A new enemy has appeared");
     }
 
     public void TakeDamage(int amount)
     {
         currentHP -= amount;
+
         if (currentHP < 1) combat.KillEnemy();
     }
 }

@@ -6,6 +6,12 @@ public class UI : MonoBehaviour
 {
     [SerializeField] UI_Text textPrefab;
     [SerializeField] Transform textContainer;
+    [SerializeField] Button attackButton;
+    [SerializeField] Button levelUpButton;
+
+    public static Button AttackButton => Instance.attackButton;
+
+    public static Button LevelUpButton => Instance.levelUpButton;
 
     public static UI Instance { get; private set; }
 

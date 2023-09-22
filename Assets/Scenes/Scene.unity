@@ -451,6 +451,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 3170148579683345880, guid: 00c6002141ee5ba4797ee80971433e6b, type: 3}
   textContainer: {fileID: 653565749}
+  attackButton: {fileID: 40919616}
+  levelUpButton: {fileID: 438456168}
 --- !u!1 &224615471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,7 +1519,6 @@ MonoBehaviour:
   currentExp: 0
   expThreshhold: 100
   expThreshholdIncreasePerLevel: 20
-  levelUpButton: {fileID: 438456168}
 --- !u!4 &2098542231
 Transform:
   m_ObjectHideFlags: 0
