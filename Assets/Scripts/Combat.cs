@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Combat : MonoBehaviour
 {
-    [SerializeField] Player player;
-    [SerializeField] Enemy enemyPrefab;
-    [SerializeField] int minExpAwarded = 10;
-    [SerializeField] int maxExpAwarded = 100;
+    [Header("Referances")]
+    [SerializeField, Tooltip("Referance to the player object")] Player player;
+    [SerializeField, Tooltip("Referance to the enemy prefab")] Enemy enemyPrefab;
+    [Header("Settings")]
+    [SerializeField,Tooltip("The minimum amount of experiance that is awarded when an enemy dies.")] int minExpAwarded = 10;
+    [SerializeField, Tooltip("The maximum (inclusive) amount of experiance that is awarded when an enemy dies.")] int maxExpAwarded = 100;
 
     Enemy enemy;
 
@@ -16,11 +18,18 @@ public class Combat : MonoBehaviour
         SpawnEnemy();
     }
 
+    /// <summary>
+    /// Spawns a new enemy, note only one should be spawned at a time.
+    /// We are only keeping a refence to one instance of an enemy at a time.
+    /// </summary>
     public void SpawnEnemy()
     {
         enemy = Instantiate(enemyPrefab);
     }
 
+    /// <summary>
+    /// Kills the enemy, this should be called when the enemy runs out of health
+    /// </summary>
     public void KillEnemy()
     {
         UI.DisplayText("Enemy has been slained.");
@@ -35,6 +44,9 @@ public class Combat : MonoBehaviour
         SpawnEnemy();
     }
 
+    /// <summary>
+    /// Player's attack function
+    /// </summary>
     public void PlayerAttack()
     {
         UI.DisplayText("You attacked dealing " + player.AttackValue + " damage.");

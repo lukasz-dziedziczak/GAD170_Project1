@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] int baseHP = 5;
-    [SerializeField] int additionalHpPerLevel = 5;
-    [SerializeField] int level;
+    [Header("Settings")]
+    [SerializeField, Tooltip("Base amount of Health Points an enemy starts with")] int baseHP = 5;
+    [SerializeField, Tooltip("Multipled by the level, how much health is added to the base amount")] int additionalHpPerLevel = 5;
+
+    [Header("Debug")]
+    [SerializeField, Tooltip("Current enemy level, randomly set on enemy spawn")] int level;
 
     float currentHP;
     float maxHP;
