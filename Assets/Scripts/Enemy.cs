@@ -32,6 +32,10 @@ public class Enemy : MonoBehaviour
         UI.DisplayText("A new enemy has appeared");
     }
 
+    /// <summary>
+    /// Called when Enemy is to take damage from player's attack
+    /// </summary>
+    /// <param name="amount"></param>
     public void TakeDamage(int amount)
     {
         currentHP -= amount;
